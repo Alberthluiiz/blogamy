@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Titulo de la pestaña de la paguina web -->
+        <!-- Este nos permite darle un nombre a nuestra Paguina web -->
         <title>Amy</title>
 
         <!-- Fonts -->

@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-     //return view('welcome');
-     return "Bienvenido a la Paguina Principal";
+/*     Nos muestra la paguina principal de Laravel 
+    nos permite verificar si esta bien creado el proyecto 
+    en el que vamos a trabajar */
+     return view('welcome');
+    //  return "Bienvenido a la Paguina Principal";
  });
 
  Route::get('cursos', function () {
