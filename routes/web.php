@@ -14,32 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-/*     Nos muestra la paguina principal de Laravel 
+    /*     Nos muestra la paguina principal de Laravel 
     nos permite verificar si esta bien creado el proyecto 
     en el que vamos a trabajar */
-     return view('welcome');
+    return view('principal');
     //  return "Bienvenido a la Paguina Principal";
- });
-
- Route::get('cursos', function () {
-    return "Bienvenido a la pagina cursos";
- });
-
- // Cursos/javascript
-
- Route::get('cursos/create', function () {
-    return "En esta paguina podras crear un curso";
 });
 
-/*  Route::get('cursos/{curso}', function($curso){
-    return "Bienvenido al curso: $curso";
- }); */
 
- Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
-
-    if ($categoria){
-        return "Bienvenido al curso $curso, de la categoria $categoria";
-    }else{
-        return "Bienvenido al curso: $curso";
-    }
- });
+Route::get('/about', function () {
+    return view('about');
+});
