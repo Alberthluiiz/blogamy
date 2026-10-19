@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    /*     Nos muestra la paguina principal de Laravel 
-    nos permite verificar si esta bien creado el proyecto 
-    en el que vamos a trabajar */
-    return view('principal');
-    //  return "Bienvenido a la Paguina Principal";
-})->name('principal');
+    $ofertas = [
+        ['nombre' => 'Vestido casual', 'precio' => 30.00, 'descuento' => 25, 'icono' => '👗'],
+        ['nombre' => 'Jean clásico',   'precio' => 30.00, 'descuento' => 20, 'icono' => '👖'],
+        ['nombre' => 'Camisa formal',  'precio' => 25.00, 'descuento' => 30, 'icono' => '👔'],
+        ['nombre' => 'Bolso de mano',  'precio' => 30.00, 'descuento' => 15, 'icono' => '👜'],
+    ];
 
+    return view('principal', ['ofertas' => $ofertas]);
+})->name('principal');
 
 Route::get('/about', function () {
     return view('about');
