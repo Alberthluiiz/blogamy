@@ -122,7 +122,7 @@
                                 <span class="font-bold text-vino">${{ number_format($precioFinal, 2) }}</span>
                                 <span class="ml-1 text-sm text-cafe/50 line-through">${{ number_format($oferta['precio'], 2) }}</span>
                             </p>
-                            <a href="https://wa.me/593000000000?text={{ urlencode('Hola, me interesa: ' . $oferta['nombre']) }}"
+                            <a href="https://wa.me/{{ config('services.whatsapp') }}?text={{ urlencode('Hola, me interesa: ' . $oferta['nombre']) }}"
                                target="_blank"
                                class="mt-4 block rounded-full border border-cafe py-2 text-center text-sm font-semibold hover:bg-cafe hover:text-white">
                                 Lo quiero
@@ -130,6 +130,67 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+        </div>
+    </section>
+
+
+        {{-- ===== ACERCA DE ===== --}}
+    <section id="nosotros" class="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+
+        {{-- Columna izquierda: cuadro con el logo --}}
+        <div class="rounded-3xl bg-arena p-4">
+            <div class="aspect-[4/3] rounded-2xl border border-[#C49A5E]/50 flex items-center justify-center">
+                <div class="w-40 h-40 rounded-full bg-white shadow-lg flex items-center justify-center">
+                    <span class="font-serif text-7xl font-bold text-vino">Y</span>
+                </div>
+            </div>
+        </div>
+
+        {{-- Columna derecha: texto y valores --}}
+        <div>
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase text-vino">Acerca de</p>
+            <h2 class="mt-2 font-serif text-4xl font-bold leading-tight">
+                Más que una tienda, un lugar para sentirte bien
+            </h2>
+            <p class="mt-5 text-cafe/70">
+                Yausing es el local del buen vestir de Mary. Nacimos con la idea de que vestir bien
+                no tiene que ser complicado ni costoso.
+            </p>
+            <p class="mt-3 text-cafe/70">
+                Cada prenda es elegida pensando en calidad, comodidad y estilo, y te atendemos de forma
+                cercana para ayudarte a encontrar lo que buscas.
+            </p>
+
+            <div class="mt-8 grid grid-cols-3 gap-4">
+                @foreach (['⭐' => 'Calidad', '💰' => 'Buen precio', '🤝' => 'Confianza'] as $icono => $valor)
+                    <div class="rounded-xl border border-arena bg-white py-5 text-center shadow-sm">
+                        <p class="text-2xl">{{ $icono }}</p>
+                        <p class="mt-2 text-sm font-semibold">{{ $valor }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+    </section>
+
+        {{-- ===== CONTACTO ===== --}}
+    <section id="contacto" class="max-w-6xl mx-auto px-6 pb-20">
+        <div class="rounded-3xl bg-vino p-8 lg:p-12 grid lg:grid-cols-2 gap-8 items-center text-white">
+            <div>
+                <h2 class="font-serif text-4xl font-bold">¡Visítanos o escríbenos!</h2>
+                <p class="mt-3 text-white/80">Pregunta por tallas, colores y disponibilidad. Te respondemos rápido.</p>
+                <a href="https://wa.me/{{ config('services.whatsapp') }}?text={{ urlencode('Hola, quisiera más información') }}"
+                   target="_blank"
+                   class="mt-6 inline-block rounded-full bg-white px-6 py-3 text-sm font-semibold text-vino hover:bg-crema">
+                    💬 Escribir por WhatsApp
+                </a>
+            </div>
+
+            <div class="space-y-3 text-sm">
+                <p class="rounded-xl bg-white/10 px-5 py-4">📍 Dirección del local, Quito</p>
+                <p class="rounded-xl bg-white/10 px-5 py-4">🕘 Lunes a sábado · 09:00 – 19:00</p>
+                <p class="rounded-xl bg-white/10 px-5 py-4">📱 +593 XX XXX XXXX</p>
             </div>
         </div>
     </section>
