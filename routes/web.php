@@ -19,9 +19,9 @@ Route::get('/', function () {
     en el que vamos a trabajar */
     return view('principal');
     //  return "Bienvenido a la Paguina Principal";
-});
+})->name('principal');
 
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
